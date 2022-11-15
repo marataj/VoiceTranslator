@@ -1,0 +1,42 @@
+.background-col{
+    background-color:white;
+}
+
+.round-navbar{
+    border-width: 1px;
+    border-radius: 30px;
+    border-style: solid;
+    margin-left: 8rem ;
+    margin-right: 8rem ;
+    margin-top: 2rem ;
+}
+
+.navbar-color{
+    background-color:rgb(240, 243, 255);;
+    border-color: white;
+    color: #339152;
+    
+}
+
+.text-area{
+    vertical-align: middle;
+    align-items: center;
+    width: 20rem;
+    resize: none;
+}
+.text-area-container{
+    vertical-align: middle;
+    align-items: center;
+}
+
+.language-sel{
+    width: 100px;
+}
+
+.content-block{
+    margin-top: 30px;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    background-color: rgb(240, 243, 255);
+    border-radius: 70px;
+}
