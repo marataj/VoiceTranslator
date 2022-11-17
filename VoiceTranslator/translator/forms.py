@@ -1,17 +1,15 @@
 from django import forms
+from django.core import validators
+from deepl.translator_engine import available_languages 
 
-available_languages = (
-    ("PL", "Polski"),
-    ("EN", "English")
-)
-
+languages_list=[(value, key) for key, value in available_languages.items()]
 
 class TranslateForm(forms.Form):
-    input_language = forms.ChoiceField(choices=available_languages, widget=forms.Select(
+    source_language = forms.ChoiceField(choices=languages_list, widget=forms.Select(
         attrs={'class': 'form-control language-sel'}))
-    input_text = forms.CharField(max_length=200, widget=forms.Textarea(
+    source_text = forms.CharField(max_length=200, widget=forms.Textarea(
         attrs={'class': 'form-control text-area', 'cols': '40', 'rows': '8'}))
-    target_language = forms.ChoiceField(choices=available_languages, widget=forms.Select(
+    target_language = forms.ChoiceField(choices=languages_list, widget=forms.Select(
         attrs={'class': 'form-control language-sel'}))
     target_text = forms.CharField(max_length=200, widget=forms.Textarea(
-        attrs={'class': 'form-control text-area', 'cols': '40', 'rows': '8'}))
+        attrs={'class': 'form-control text-area', 'cols': '40', 'rows': '8'}), required=False)
