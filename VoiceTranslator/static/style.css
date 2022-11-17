@@ -2,7 +2,7 @@
     background-color:white;
 }
 
-.round-navbar{
+.navbar-shape{
     border-width: 1px;
     border-radius: 30px;
     border-style: solid;
@@ -12,7 +12,7 @@
 }
 
 .navbar-color{
-    background-color:rgb(240, 243, 255);;
+    background-color:rgb(255, 240, 240);;
     border-color: white;
     color: #339152;
     
@@ -37,6 +37,6 @@
     margin-top: 30px;
     margin-left: 8rem;
     margin-right: 8rem;
-    background-color: rgb(240, 243, 255);
+    background-color: rgb(255, 240, 240);
     border-radius: 70px;
 }
