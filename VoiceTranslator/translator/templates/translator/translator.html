@@ -8,15 +8,19 @@ Translator!
 <form action="" method="post">
   {% csrf_token %}
   
-    <div class="content-block">
+    <div>
         <br>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-4" align="center">
                     {{form.source_language}}
                 </div>
-    
-                <div class="col-sm-4" align="center">
+                <div class="col-xsm-1" align="center">
+                    
+                    <button class="btn-primary swap-button" name="swap-btn"></button>
+                </div>
+
+                <div class="col-sm-4 " align="center">
                     {{form.target_language}}
                 </div>
             </div>
@@ -34,13 +38,18 @@ Translator!
             <br>
             <div class="row justify-content-center">
                 <div class="col" align="center">
-                    <button class="btn btn-primary" type="submit">Translate</button>
+                    <button class="btn" type="submit" name="submit-btn" style="background-color:darkred;">Translate it!</button>
                 </div>
                 
             </div>
         </div>
+        <audio src=""></audio>
         
         <br>
     </div>
 </form>
 {% endblock body %}
+
+{% block script %}
+
+{% endblock script %}

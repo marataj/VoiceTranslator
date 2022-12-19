@@ -1,14 +1,12 @@
 .background-col{
-    background-color:#25182E;
-}
-
-.navbar-shape{
-    border-width: 1px;
-    border-radius: 30px;
-    border-style: solid;
-    margin-left: 8rem ;
-    margin-right: 8rem ;
-    margin-top: 2rem ;
+    background: url("images/edu.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+	
+  
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .navbar-color{
@@ -21,22 +19,24 @@
 .text-area{
     vertical-align: middle;
     align-items: center;
-    width: 20rem;
+    width: 100%;
     resize: none;
 }
 .text-area-container{
+    background-image: url("images/edu.jpg"); 
     vertical-align: middle;
     align-items: center;
+    width: 20rem;
 }
 
 .language-sel{
     width: 100px;
 }
 
-.content-block{
-    margin-top: 30px;
-    margin-left: 8rem;
-    margin-right: 8rem;
-    background-color: #FFBE00;
-    border-radius: 70px;
+.swap-button{
+    background: url("images/swap.png") no-repeat;
+    background-size: 100%;
+    width: 30px;
+    height: 25px;
+    border: none;
 }
