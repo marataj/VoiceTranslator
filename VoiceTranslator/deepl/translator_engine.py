@@ -8,8 +8,6 @@ available_languages={
 }
 
 
-
-
 class TextTranslated:
     def __init__(self, source_text: str, source_language: str, target_language: str, translated_text: str) -> None:
         self.source_text = source_text
@@ -23,6 +21,7 @@ class Translator:
         self.__api_key = api_key
 
     def translate(self, source_text: str, source_language: str, target_language: str) -> TextTranslated:
+
         raw_result = requests.get(
             "https://api-free.deepl.com/v2/translate",
             params={

@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/pycharm,django,python
-# Edit at https://www.toptal.com/developers/gitignore?templates=pycharm,django,python
+# Created by https://www.toptal.com/developers/gitignore/api/django,python,pycharm,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=django,python,pycharm,visualstudiocode
 
 ### Django ###
 *.log
@@ -181,8 +181,7 @@ cython_debug/
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-.idea
-
+**/.idea
 # AWS User-specific
 .idea/**/aws.xml
 
@@ -372,4 +371,23 @@ fabric.properties
 poetry.toml
 
 
-# End of https://www.toptal.com/developers/gitignore/api/pycharm,django,python
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/django,python,pycharm,visualstudiocode

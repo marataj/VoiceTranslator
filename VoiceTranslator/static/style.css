@@ -1,5 +1,5 @@
 .background-col{
-    background-color:white;
+    background-color:#25182E;
 }
 
 .navbar-shape{
@@ -12,7 +12,7 @@
 }
 
 .navbar-color{
-    background-color:rgb(255, 240, 240);;
+    background-color:#CA1F3d;
     border-color: white;
     color: #339152;
     
@@ -37,6 +37,6 @@
     margin-top: 30px;
     margin-left: 8rem;
     margin-right: 8rem;
-    background-color: rgb(255, 240, 240);
+    background-color: #FFBE00;
     border-radius: 70px;
 }

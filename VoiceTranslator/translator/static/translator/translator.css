@@ -1,5 +1,5 @@
 .background-col{
-    background-color: #e2b3aa;
+    background-color: rgb(2, 143, 52);
 }
 
 .round-navbar{
@@ -9,12 +9,13 @@
     margin-left: 4rem ;
     margin-right: 4rem ;
     margin-top: 2rem ;
+    
 }
 
 .navbar-color{
-    background-color: #76445c;
-    border-color: #57334b;
-    color: #57334b;
+    background-color: rgb(2, 143, 52);
+    border-color: rgb(2, 143, 52);
+    color: rgb(2, 143, 52);
     
 }
 
