@@ -13,3 +13,4 @@ class TranslateForm(forms.Form):
         attrs={'class': 'form-control language-sel'}))
     target_text = forms.CharField(max_length=200, widget=forms.Textarea(
         attrs={'class': 'form-control text-area'}), required=False)
+    

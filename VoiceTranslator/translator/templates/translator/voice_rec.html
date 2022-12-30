@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}Voice recognition{% endblock title %}
+{% block body %}
+<header>
+    <h1>Web Recorder{{ res }}</h1>
+  </header>
+  <main>
+    
+    <div class="controls">
+      <form action="/voice" method="post" id="record_form">
+      
+      <button type="button" id="record" >Record</button>
+      <input type="hidden" id="record_field" name = "record_field">
+      {% csrf_token %}
+      </form>
+      <p>
+        {{typ}}
+      </p>
+    </div>
+    <ul id="recordings"></ul>
+  </main>
+  <footer>
+{% endblock body %}
+{% block script %}
+<script>
+  const recordButton = document.getElementById("record")
+  const recordField = document.getElementById("record_field")
+  const recordForm = document.getElementById("record_form")
+
+  navigator.mediaDevices.getUserMedia({ audio: true })
+  .then(stream => {
+    const mediaRecorder = new MediaRecorder(stream, );
+    
+    const audioChunks = [];
+    mediaRecorder.addEventListener("dataavailable", event => {
+      audioChunks.push(event.data);
+    });
+
+    mediaRecorder.addEventListener("stop", () => {
+      const audioBlob = new Blob(audioChunks);
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audio = new Audio(audioUrl);
+      console.log(audioBlob)
+      console.log(audioUrl)
+      //console.log(audioBlob);
+          
+        //var xhttp = new XMLHttpRequest();
+        //xhttp.open("POST", "/voice", true);
+        
+        //var data = new FormData();
+        var reader1 = new Audio
+        var reader = new FileReader();
+        reader.readAsDataURL(audioBlob);
+        reader.onloadend = function () {
+        var base64String = reader.result;
+        console.log('Base64 String - ', base64String);
+        recordField.setAttribute("value", base64String)
+        recordForm.submit()
+        }
+        
+        
+        
+        //xhttp.send(data);
+            });
+
+    recordButton.addEventListener("click", () => {
+      if (recordButton.innerText == 'Record') {
+        mediaRecorder.start();
+        recordButton.innerText = 'Stop';
+      } else {
+        mediaRecorder.stop();
+        recordButton.innerText = 'Record';
+      } 
+    })
+  });
+</script>
+{% endblock script %}
+
+
