@@ -35,8 +35,27 @@
 
 .swap-button{
     background: url("images/swap.png") no-repeat;
-    background-size: 100%;
-    width: 30px;
-    height: 25px;
-    border: none;
+    background-position: center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.rec-button{
+    background: url("images/record_start.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.rec-stop-button{
+    background: url("images/record_stop.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
