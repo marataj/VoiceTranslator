@@ -1,0 +1,39 @@
+.background-col{
+    background-color: rgb(2, 143, 52);
+}
+
+.round-navbar{
+    border-width: 1px;
+    border-radius: 30px;
+    border-style: solid;
+    margin-left: 4rem ;
+    margin-right: 4rem ;
+    margin-top: 2rem ;
+    
+}
+
+.navbar-color{
+    background-color: rgb(2, 143, 52);
+    border-color: rgb(2, 143, 52);
+    color: rgb(2, 143, 52);
+    
+}
+
+.text-area{
+    vertical-align: middle;
+    align-items: center;
+    width: 20rem;
+    resize: none;
+}
+.text-area-container{
+    vertical-align: middle;
+    align-items: center;
+}
+
+.language-sel{
+    width: 100px;
+}
+
+.content-block{
+    margin-top: 300px;
+}
