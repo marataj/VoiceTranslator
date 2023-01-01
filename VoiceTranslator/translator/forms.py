@@ -1,8 +1,8 @@
 from django import forms
 from django.core import validators
-from deepl.translator_engine import available_languages 
+from .models import Language
 
-languages_list=[(value, key) for key, value in available_languages.items()]
+languages_list=[(i.translate_short, i.language) for i in Language.objects.all()]
 
 class TranslateForm(forms.Form):
     source_language = forms.ChoiceField(choices=languages_list, widget=forms.Select(

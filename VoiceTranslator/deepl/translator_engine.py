@@ -7,11 +7,6 @@ from dataclasses import dataclass
 
 __all__ = ["TextTranslated, Translator, SpeechRecognizer"]
 
-available_languages={
-    "Polski": "PL",
-    "English": "EN"
-}
-
 @dataclass
 class TextTranslated:
     source_text: str 

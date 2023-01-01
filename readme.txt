@@ -9,7 +9,7 @@ Features to do:
 
     ######### 2-nd release #########
 
-    - Prepare feature of talks' listening and building basic statistic, based on that
+    - Prepare feature of talks listening and building basic statistic, based on that
 
 To do:
     1. View with form that ensures translating of the written text
