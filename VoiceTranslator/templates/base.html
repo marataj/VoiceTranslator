@@ -17,10 +17,26 @@
     <img src="{% static 'images/icon.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
     Translate it
   </a>
+  <a class="navbar-light"href="{% url 'login' %}">Login</a>
   
 </nav>
 
   <body class="background-col">
+
+    {% if messages %}    
+    {% for message in messages %}
+    
+    <div class="row justify-content-center">
+    <div class="col-sm-6 alert alert-{{message.extra_tags|default:"primary"}} alert-dismissible fade show" role="alert">
+      {{message}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
     {% block body %}{% endblock body %}
     
     <!-- Optional JavaScript -->
