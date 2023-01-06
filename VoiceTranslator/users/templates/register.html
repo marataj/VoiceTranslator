@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+<div class="row justify-content-center">
+    <div class="col-sm-6">
+        <p class="display-4">Register: </p>
+        <form method="post">
+            {% csrf_token %}
+            <table>{{form.as_table}}</table>
+            
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        
+        
+    </div>   
+</div>
+
+
+{% endblock body %}
+
