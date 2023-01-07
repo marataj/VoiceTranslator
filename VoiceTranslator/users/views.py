@@ -49,7 +49,7 @@ class RegisterUser(View):
             messages.info(request,"Registered successfuly", extra_tags="success")
             return HttpResponseRedirect(reverse("login"))
         else:
-            messages.info(request,"Error", extra_tags="danger")
+            return render(request, "register.html", {"form": form})
 
     
 
