@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<br>
+<div class="row justify-content-center">
+    <div class="col-sm-6" >
+        <p class="display-4">Register: </p>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form%}
+                <div class="form-group">
+                    {{field.label_tag}}    
+                    {{field}}
+                    <acronym title="{{field.help_text}}"><img src="{% static "images/info.png" %}" alt="" style="width: 20px; height: 20px;"></acronym>
+                    <div style="color: red;">{{field.errors}}</div>
+                </div>
+            {% endfor %}                
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>   
+</div>
+
+
+{% endblock body %}
+
