@@ -6,9 +6,7 @@
 {% endblock title %}
 
 {% block body %}
-<p class="h1">History</p>
-
-
+<br>
 {% for record in Translates %}
 <div class="row justify-content-center">
 <div class="card text-white bg-primary mb-3" style="max-width: 55rem; width: 30rem;" align="center">
@@ -21,7 +19,8 @@
   </div>
 </div>
 {% endfor %}
-<div class="row justify-content-center"
+<br>
+<div class="row justify-content-center" style="background-color: white;">
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
