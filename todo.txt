@@ -1,3 +1,0 @@
-1. Add translate - form --> done
-2. Convert standard HTML form for django-driven form
-
