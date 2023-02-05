@@ -1,100 +1,103 @@
 
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
+    <link rel="stylesheet" href={% static 'translator/translator.css' %}>
+{% endblock head %}
 {% block title %}
-Translator
+    Translator
 {% endblock title %}
 
 {% block body %}
-<form method="post" id ="translate_form">
-  {% csrf_token %}
-    <div>
-        <br>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-sm-4" align="center">
-                    {{form.source_language}}
+    <form method="post" id ="translate_form">
+        {% csrf_token %}
+        <div>
+            <br>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4" align="center">
+                        {{form.source_language}}
+                    </div>
+                    <div class="col-xsm-1" align="center">
+                        <button class="btn-secondary swap-button" name="swap-btn"></button>
+                    </div>
+                    <div class="col-sm-4 " align="center">
+                        {{form.target_language}}
+                    </div>
                 </div>
-                <div class="col-xsm-1" align="center">
-                    <button class="btn-primary swap-button" name="swap-btn"></button>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-sm-4" align="center">
+                        {{form.source_text}}
+                    </div>
+                    <div class="col-sm-4" align="center" >
+                        {{form.target_text}}
+                    </div>
                 </div>
-                <div class="col-sm-4 " align="center">
-                    {{form.target_language}}
+                <input type="hidden" id="record_field" name = "record_field">
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col" align="center">
+                        <button class="btn-secondary rec-button opac" type="button" name="record_btn" id="record_btn"></button>
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+
+                    <div class="col" align="center">
+                        <button class="btn text-muted opac" type="submit" name="submit-btn">Translate!</button>
+                    </div>
+
                 </div>
             </div>
             <br>
-            <div class="row justify-content-center">
-                <div class="col-sm-4" align="center">
-                    {{form.source_text}}
-                </div>
-                <div class="col-sm-4" align="center" >
-                    {{form.target_text}}
-                </div>
-            </div>
-            <input type="hidden" id="record_field" name = "record_field">
-            <br>
-            <div class="row justify-content-center">
-                <div class="col" align="center">
-                    <button class="btn-primary rec-button" type="button" name="record_btn" id="record_btn"></button>
-                </div>        
-            </div>
-            <br>
-            <div class="row justify-content-center">
-                
-                <div class="col" align="center">
-                    <button class="btn" type="submit" name="submit-btn" style="background-color:darkred;">Translate it!</button>
-                </div>
-                
-            </div>
         </div>
-        <br>
-    </div>
-</form>
+    </form>
 {% endblock body %}
 
 {% block script %}
 
-<script>
-    const recordButton = document.getElementById("record_btn")
-    const translateForm = document.getElementById("translate_form")
-    const recordField = document.getElementById("record_field")
-    var voice_recorded = false
-    navigator.mediaDevices.getUserMedia({ audio: true })
-    .then(stream => {
-    const mediaRecorder = new MediaRecorder(stream, );
-    
-    const audioChunks = [];
-    mediaRecorder.addEventListener("dataavailable", event => {
-      audioChunks.push(event.data);
-    });
+    <script>
+        const recordButton = document.getElementById("record_btn")
+        const translateForm = document.getElementById("translate_form")
+        const recordField = document.getElementById("record_field")
+        var voice_recorded = false
+        navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(stream => {
+            const mediaRecorder = new MediaRecorder(stream, );
 
-    mediaRecorder.addEventListener("stop", () => {
-        const audioBlob = new Blob(audioChunks);    
-          
-          var reader = new FileReader();
-          reader.readAsDataURL(audioBlob);
-          reader.onloadend = function () {
-          var base64String = reader.result;
-          recordField.setAttribute("value", base64String)
-          translateForm.submit()
-          }
-              });
-  
-    recordButton.addEventListener("click", () => {
-    if (voice_recorded == false) {
-        voice_recorded = true
-        mediaRecorder.start();
-        recordButton.classList.remove('rec-button')
-        recordButton.classList.add('rec-stop-button')
-        
-    } else {
-        mediaRecorder.stop();
-        recordButton.classList.add('rec-button')
-        recordButton.classList.remove('rec-stop-button')
-    } 
-    })
-     
-    });
-</script>
+            const audioChunks = [];
+            mediaRecorder.addEventListener("dataavailable", event => {
+                audioChunks.push(event.data);
+            });
+
+            mediaRecorder.addEventListener("stop", () => {
+                const audioBlob = new Blob(audioChunks);
+
+                var reader = new FileReader();
+                reader.readAsDataURL(audioBlob);
+                reader.onloadend = function () {
+                    var base64String = reader.result;
+                    recordField.setAttribute("value", base64String)
+                    translateForm.submit()
+                }
+            });
+
+            recordButton.addEventListener("click", () => {
+                if (voice_recorded == false) {
+                    voice_recorded = true
+                    mediaRecorder.start();
+                    recordButton.classList.remove('rec-button')
+                    recordButton.classList.add('rec-stop-button')
+
+                } else {
+                    mediaRecorder.stop();
+                    recordButton.classList.add('rec-button')
+                    recordButton.classList.remove('rec-stop-button')
+                }
+            })
+
+        });
+    </script>
 
 {% endblock script %}

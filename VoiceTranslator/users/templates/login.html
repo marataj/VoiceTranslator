@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<br>
-<div class="row justify-content-center">
-    <div class="col-sm-6">
-        <p class="display-4">Login: </p>
-        <form method="post">
-            {% csrf_token %}
-            <div class="form-group">
-            {{form.username.label_tag}}    
-            {{form.username}}
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <div class="card text-muted bg-light mb-3 opac" style="padding: 20px;" align="left">
+                <p class="display-4">Login: </p>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{form.username.label_tag}}
+                        {{form.username}}
+                    </div>
+                    <div class="form-group">
+                        {{form.password.label_tag}}
+                        {{form.password}}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
             </div>
-            <div class="form-group">
-            {{form.password.label_tag}}
-            {{form.password}}
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>  
-    </div>   
-</div>
+        </div>
+    </div>
 
 
 {% endblock body %}

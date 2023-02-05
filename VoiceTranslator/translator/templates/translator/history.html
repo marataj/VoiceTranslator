@@ -1,47 +1,42 @@
-
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}
-
-{% endblock title %}
+{% block head %}
+    <link rel="stylesheet" href={% static 'translator/history.css' %}>
+{% endblock head %}
+{% block title %}Translation history{% endblock title %}
 
 {% block body %}
-<br>
-{% for record in Translates %}
-<div class="row justify-content-center">
-<div class="card text-white bg-primary mb-3" style="max-width: 55rem; width: 30rem;" align="center">
-    <div class="card-header">{{record.date}}</div>
-    <div class="card-body">
-      <h5 class="card-title">{{record.source_language}} -> {{record.target_language}}</h5>
-      <p class="card-text">[{{record.source_language}}]: {{record.source_text}}</p>
-      <p class="card-text">[{{record.target_language}}]: {{record.target_text}}</p>
+    <br>
+    <div class="scrollable">
+        <div>
+            {% for record in Translates %}
+                <div class="row justify-content-center">
+                    <div class="card text-muted bg-light mb-3 opac" style="max-width: 55rem; width: 30rem;" align="center">
+                        <div class="card-header">{{record.date}}</div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{record.source_language}} -> {{record.target_language}}</h5>
+                            <p class="card-text activate">[{{record.source_language}}]: {{record.source_text}}</p>
+                            <p class="card-text">[{{record.target_language}}]: {{record.target_text}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <br>
+
+        <nav aria-label="pagination">
+            <ul class="pagination justify-content-center opac ">
+                {% for page in page_obj.paginator.page_range  %}
+                    {% if page_obj.number == page %}
+                        <li class="page-item active"><a class="page-link text-muted"  href="?page={{page}}" style="text-decoration: none;">{{page}}</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link text-muted" href="?page={{page}}" style="text-decoration: none;">{{page}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
     </div>
-  </div>
-</div>
-{% endfor %}
-<br>
-<div class="row justify-content-center" style="background-color: white;">
-<div class="pagination">
-    <span class="step-links">
-        {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-        {% endif %}
-
-        <span class="current">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-        </span>
-
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
-    </span>
-</div>
-</div>
 
 {% endblock body %}
-
-{% block script %}
-
-{% endblock script %}

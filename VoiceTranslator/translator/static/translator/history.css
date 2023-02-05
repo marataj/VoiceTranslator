@@ -1,0 +1,9 @@
+.scrollable {
+    overflow-y: scroll;
+    overflow-x:hidden;
+    height: 90vh;
+}
+
+li.active {
+    background-color: rgb(167, 117, 224);
+}
