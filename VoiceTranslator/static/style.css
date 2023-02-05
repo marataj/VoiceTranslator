@@ -1,0 +1,61 @@
+.background-col{
+    background: url("images/edu.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+	
+  
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.navbar-color{
+    background-color:#CA1F3d;
+    border-color: white;
+    color: #339152;
+    
+}
+
+.text-area{
+    vertical-align: middle;
+    align-items: center;
+    width: 100%;
+    resize: none;
+}
+.text-area-container{
+    background-image: url("images/edu.jpg"); 
+    vertical-align: middle;
+    align-items: center;
+    width: 20rem;
+}
+
+.language-sel{
+    width: 100px;
+}
+
+.swap-button{
+    background: url("images/swap.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.rec-button{
+    background: url("images/record_start.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.rec-stop-button{
+    background: url("images/record_stop.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
