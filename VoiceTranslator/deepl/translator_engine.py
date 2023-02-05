@@ -16,7 +16,7 @@ class TextTranslated:
 
 
 class Translator:
-    API_KEY="5cce4070-ebdd-5a51-373d-d2f094b4c760:fx"
+    API_KEY=str(os.getenv('DEEPL_API_KEY'))
     API_ENDPOINT = "https://api-free.deepl.com/v2/translate"
     @classmethod
     def translate(cls, source_text: str, source_language: str, target_language: str) -> TextTranslated:
