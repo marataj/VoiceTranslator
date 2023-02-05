@@ -7,11 +7,15 @@
 
 The VoiceTranslator alows you to translate the standard typed text, and the speech captured with the microphone.
 
-[gif] [gif]
+![1](https://user-images.githubusercontent.com/96992545/216851403-6b70707a-0e4c-4b44-96c7-6e59b98b9b09.gif) 
+
+![2](https://user-images.githubusercontent.com/96992545/216851408-5b6b646f-0eed-481e-a61b-d923ddd2b264.gif)
 
 The application also allows users to register and log in. Each translation is saved in the integrated database, thanks to which the logged-in user has access to the history of his translations.
 
-[gif] [gif]
+![screen-recording (4)](https://user-images.githubusercontent.com/96992545/216851545-20c99a9b-0a9d-4dc3-8e88-54ec66fad10e.gif)
+
+![screen-recording (5)](https://user-images.githubusercontent.com/96992545/216851553-e35695c5-d9d3-48d1-a465-5141d41e503d.gif)
 
 The application works based on the translation engine API - [deepl](https://www.deepl.com/), and the [SpeechRecognition](https://pypi.org/project/SpeechRecognition/) package.
 
