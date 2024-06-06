@@ -1,8 +1,11 @@
 from django import forms
-from django.core import validators
 from .models import Language
+from django.db.utils import OperationalError
 
-languages_list=[(i.translate_short, i.language) for i in Language.objects.all()]
+try:
+    languages_list=[(i.translate_short, i.language) for i in Language.objects.all()]
+except OperationalError:
+    pass
 
 class TranslateForm(forms.Form):
     source_language = forms.ChoiceField(choices=languages_list, widget=forms.Select(
