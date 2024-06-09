@@ -1,10 +1,9 @@
 from dataclasses import dataclass
-from enum import Enum
 import os
 
 import requests
 
-__all__ = ["TextTranslated, Translator, SpeechRecognizer"]
+__all__ = ["TextTranslated", "Translator"]
 
 
 @dataclass
@@ -13,7 +12,6 @@ class TextTranslated:
     Data class that represents dataset used to single translation.
 
     """
-
     source_text: str
     source_language: str
     target_language: str
@@ -38,16 +36,16 @@ class Translator:
 
         Parameters
         ----------
-        source_text : str
+        source_text : `str`
             Text to be translated.
-        source_language : str
+        source_language : `str`
             The source language.
-        target_language : str
-            The targed language.
+        target_language : `str`
+            The target language.
 
         Returns
         -------
-        TextTranslated
+        `TextTranslated`
             Dataset containing data about translated text.
 
         """

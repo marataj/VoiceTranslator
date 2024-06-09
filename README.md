@@ -1,13 +1,12 @@
 # VoiceTranslator
 
-
 ## **Introduction**
 
 **This project is an simple translator app, created using Python and Django. The main assumption was to enable the speech capture and recognition.**
 
 The VoiceTranslator alows you to translate the standard typed text, and the speech captured with the microphone.
 
-![1](https://user-images.githubusercontent.com/96992545/216851403-6b70707a-0e4c-4b44-96c7-6e59b98b9b09.gif) 
+![1](https://user-images.githubusercontent.com/96992545/216851403-6b70707a-0e4c-4b44-96c7-6e59b98b9b09.gif)
 
 ![2](https://user-images.githubusercontent.com/96992545/216851408-5b6b646f-0eed-481e-a61b-d923ddd2b264.gif)
 
@@ -30,12 +29,31 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all the
 ```bash
 pip install -r requirements.txt
 ```
-Add the `.env` file to the `VoiceTranslator/VoiceTranslator` directory. The structure of the  `.env` file:
+
+Add the `.env` file to the `VoiceTranslator/VoiceTranslator` directory. The structure of the `.env` file:
+
 ```
 SECRET_KEY=""
 DEEPL_API_KEY=""
 TEMP_DIR=""
+DB_NAME=""
+DB_USER=""
+DB_PASSWORD=""
+DB_HOST=""
+DB_PORT=""
 ```
+
+The instance of postgresql database is required - in order to establish connection, please fill all the `DB_...` variables in the `.env` file accordingly to your DB instance.
+
+Call the instructions below in order to prepare the database structure and load the supported languages.
+
+```bash
+python manage.py makemigrations translator
+python manage.py migrate
+python manage.py set_languages
+```
+
+Your environment is ready to use!
 
 ## **Contributing**
 

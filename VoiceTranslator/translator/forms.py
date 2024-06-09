@@ -1,10 +1,10 @@
 from django import forms
 from .models import Language
-from django.db.utils import OperationalError
+from django.db.utils import OperationalError, ProgrammingError
 
 try:
     languages_list=[(i.translate_short, i.language) for i in Language.objects.all()]
-except OperationalError:
+except (OperationalError, ProgrammingError):
     languages_list=[]
 
 class TranslateForm(forms.Form):
